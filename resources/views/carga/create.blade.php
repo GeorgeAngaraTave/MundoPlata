@@ -23,32 +23,14 @@
 					    <!-- Tab panes -->
 					    <div class="tab-content"> 
 					        <div role="tabpanel" class="tab-pane active uno" id="home">
-								
-					        	{!! Form::open(array('url' => 'info', 'method' => 'POST', 'files' => true, 'accept-charset'=>'UTF-8', 'enctype' => 'multipart/form-data')) !!}
-					        	{!! Form::label('email', 'Selecione Archivo', ['class' => 'control-label']) !!}
-					            <input type="hidden" name="tipo" value="1">
-					            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-								<input id="fileuser" type="file" class="file-loading" name="file">
-								{!! Form::submit('Cargar') !!}
-								{!! Form::close() !!}
-								
+								<label class="control-label">Selecione Archivo</label>
+								<input id="fileuser" type="file" class="file-loading">
 					        </div>
 					        <div role="tabpanel" class="tab-pane dos" id="profile">
-					        	{!! Form::open(array('url' => 'info', 'method' => 'POST', 'files' => true, 'accept-charset'=>'UTF-8', 'enctype' => 'multipart/form-data')) !!}
-					        	{!! Form::label('email', 'Selecione Archivo', ['class' => 'control-label']) !!}
-					            <input type="hidden" name="tipo" value="2">
-					            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-								<input id="fileuser" type="file" class="file-loading" name="file">
-								{!! Form::submit('Cargar') !!}
-								{!! Form::close() !!}
+					        	<label class="control-label">Selecione Archivo</label>
+								<input id="filevar" type="file" class="file-loading">
 					        </div>
-					        <div role="tabpanel" class="tab-pane tres" id="messages">
-					        	<br />
-					        	{!! Form::open(array('url' => 'info/create', 'method' => 'GET')) !!}
-								{!! Form::submit('Descargar') !!}
-								{!! Form::close() !!}
-					        	
-					        
+					        <div role="tabpanel" class="tab-pane tres" id="messages">Tres</div>
 					    </div>
 					</div>
 				</div>
@@ -56,21 +38,4 @@
 		</div>
 	</div>
 </div>
-
-<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Import - Export in Excel and CSV Laravel 5</a>
-			</div>
-		</div>
-	</nav>
-	<div class="container">
-		<a href="{{ URL::to('info/xls') }}"><button class="btn btn-success">Download Excel xls</button></a>
-		<a href="{{ URL::to('info/xlsx') }}"><button class="btn btn-success">Download Excel xlsx</button></a>
-		<a href="{{ URL::to('info/csv') }}"><button class="btn btn-success">Download CSV</button></a>
-		<form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ URL::to('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
-			<input type="file" name="import_file" />
-			<button class="btn btn-primary">Import File</button>
-		</form>
-	</div>
 @endsection

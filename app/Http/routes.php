@@ -11,14 +11,14 @@
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 Route::get('prueba', function () {
     return 'Hola';
 });
 
 Route::get('insertar', 'CargaInfoController@index');
-Route::get('/', 'InfoController@index');
-Route::resource('/info', 'InfoController');
+
+Route::resource('inse', 'InfoController');

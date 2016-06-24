@@ -4,10 +4,9 @@ namespace MPlaneta;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Participante extends Model
+class participante extends Model
 {
-    protected $table = 'participantes';
+    protected $table = 'my_flights';
     public $primaryKey  = 'id';
     public $timestamps = false;
-    protected $fillable = ['nombre', 'cedula','edad', 'genero'];
 }

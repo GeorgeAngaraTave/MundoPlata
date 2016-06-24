@@ -15,8 +15,6 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
-
-
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -123,7 +121,6 @@ return [
     |
     */
 
-
     'providers' => [
 
         /*
@@ -151,7 +148,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -160,7 +156,7 @@ return [
         MPlaneta\Providers\AuthServiceProvider::class,
         MPlaneta\Providers\EventServiceProvider::class,
         MPlaneta\Providers\RouteServiceProvider::class,
-        
+
     ],
 
     /*
@@ -208,8 +204,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-        'Input' => Illuminate\Support\Facades\Input::class,
+
     ],
 
 ];
