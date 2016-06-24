@@ -23,14 +23,35 @@
 					    <!-- Tab panes -->
 					    <div class="tab-content"> 
 					        <div role="tabpanel" class="tab-pane active uno" id="home">
-								<label class="control-label">Selecione Archivo</label>
-								<input id="fileuser" type="file" class="file-loading">
+								
+					        	{!! Form::open(array('url' => 'info', 'method' => 'POST', 'files' => true, 'accept-charset'=>'UTF-8', 'enctype' => 'multipart/form-data')) !!}
+					        	{!! Form::label('email', 'Selecione Archivo', ['class' => 'control-label']) !!}
+					            <input type="hidden" name="tipo" value="1">
+					            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+								<input id="fileuser" type="file" class="file-loading" name="file">
+								{!! Form::submit('Cargar') !!}
+								{!! Form::close() !!}
+								
 					        </div>
 					        <div role="tabpanel" class="tab-pane dos" id="profile">
-					        	<label class="control-label">Selecione Archivo</label>
-								<input id="filevar" type="file" class="file-loading">
+					        	{!! Form::open(array('url' => 'info', 'method' => 'POST', 'files' => true, 'accept-charset'=>'UTF-8', 'enctype' => 'multipart/form-data')) !!}
+					        	{!! Form::label('email', 'Selecione Archivo', ['class' => 'control-label']) !!}
+					            <input type="hidden" name="tipo" value="2">
+					            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+								<input id="fileuser" type="file" class="file-loading" name="file">
+								{!! Form::submit('Cargar') !!}
+								{!! Form::close() !!}
 					        </div>
-					        <div role="tabpanel" class="tab-pane tres" id="messages">Tres</div>
+					        <div role="tabpanel" class="tab-pane tres" id="messages">
+					        	<br />
+					        	
+					        	<a href="{{ URL::to('info/xls') }}"><button class="btn btn-success">Download Excel xls</button></a>
+								<a href="{{ URL::to('info/xlsx') }}"><button class="btn btn-success">Download Excel xlsx</button></a>
+								<a href="{{ URL::to('info/csv') }}"><button class="btn btn-success">Download CSV</button></a>
+					        	
+								
+					        	
+					        
 					    </div>
 					</div>
 				</div>
@@ -38,4 +59,5 @@
 		</div>
 	</div>
 </div>
+
 @endsection
